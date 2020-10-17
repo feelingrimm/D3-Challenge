@@ -55,34 +55,7 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
   //set mins/max in scale
   xLinearScale.domain([xMinimum, xMaximum]);
   yLinearScale.domain([yMinimum, yMaximum]);
-  // Append x-axis
-  chartGroup.append("g").attr("transform", `translate(0, ${height})`)
-    .call(xAxis);
-  // Append y-axis
-  chartGroup.append("g").call(yAxis);
-  // Create code to build the bar chart using health data extracted 
-  chartGroup.selectAll("circle")
-    .data(healthData)
-    .enter()
-    .append("circle")
-    .attr("cx", d => xLinearScale(d.poverty))
-    .attr("cy", d => yLinearScale(d.healthcare))
-    .attr("r", 9)
-    .attr("fill", "#16ABCC")
-    .attr("opacity", .70);
-  // Add texts to the circles
-  chartGroup.selectAll("text.text-circles")
-    .data(healthData)
-    .enter()
-    .append("text")
-    .classed("stateText", true)
-    .text(d => d.abbr)
-    .attr("x", d => xLinearScale(d.poverty))
-    .attr("y", d => yLinearScale(d.healthcare))
-    .attr("text-anchor","middle")
-    .attr("font-size","8px");
-  //http://bl.ocks.org/weiglemc/6185069
-  // set y axis label
+  
   svg.append("text")
       .attr("class", "y axis")
       .text("Lacks Healthcare (%)")
