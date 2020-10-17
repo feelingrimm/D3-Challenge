@@ -7,7 +7,7 @@ var margin = {
   bottom: 50,
   left: 50
 };
-// Define dimensions of the chart area
+
 var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 // Create an SVG wrapper, append an SVG group that will hold our chart,and shift the latter by left and top margins.
