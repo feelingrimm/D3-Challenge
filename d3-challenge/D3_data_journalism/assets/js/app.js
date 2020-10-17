@@ -47,7 +47,7 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
   yMaximum = d3.max(healthData, function(data) {
       return data.healthcare +1;
   });
-  //print mins and max to console
+
   console.log(xMaximum);
   console.log(xMinimum);
   console.log(yMaximum);
